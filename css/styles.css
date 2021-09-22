@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.25;
+	font-size: 62.5%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato',sans-serif;
+}
+
+.dashboard {
+	background-color: rgb(20, 241, 185);
+}
+
+.dashboard header {
+	margin-left: 2.5em;
+	padding-top: 15em;
+	color: #1F2739;
+}
+
+.dashboard header h3 {
+	font-size: 3.7em;
+	letter-spacing: 0.3em;
+}
+
+.dashboard header h1 {
+	font-size: 6em;
+}
+
+.dashboard header h2 {
+	background-color: #1F2739;
+	color: rgb(20, 241, 185);
+	width: 300px;
+	font-size: 2.2em;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+}
+
+.dashboard header h2 span {
+	background-color: rgb(20, 241, 185);
+	color: #1F2739;
+	padding: 7px 8px;
+	margin-left: 2px;
+}
+
+.dashboard .container {
+	margin-top: 100px;
+	margin-left: 2.5em;
+	padding-bottom: 100px;
+	max-width: 550px;
+}
+
+.dashboard .stock-box {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	margin-right: 5px;
+	margin-bottom: 7px;
+	border: 5px solid #1F2739;
+	text-align: center;
+	font-family: 'Lato',sans-serif;
+	color: #1F2739; /* temporary */
+}
+
+.dashboard .stock-box .company-name {
+	font-size: 2.5em;
+	margin-top: 5px;
+}
+
+.dashboard .stock-box .change {
+	font-size: 3em;
+}
+
+.dashboard .stock-box .fa {
+	font-size: 3em;
+	margin-top: 5px;
+}
+
+.search-service {
+	background-color: #1F2739;
+}
+
+.search-service header {
+	margin-left: 2.5em;
+	padding-top: 15em;
+	color: rgb(20, 241, 185);
+}
+
+.search-service header h1 {
+	font-size: 5em;
+}
+
+.search-service header h2 {
+	font-size: 2.2em;
+}
+
+.search-service form {
+	margin-left: 2.5em;
+	margin-top: 20px;
+}
+
+.search-service form input {
+	height: 30px;
+	width: 295px;
+	padding: 20px 12px;
+	border: 3px solid rgb(20, 241, 185);
+	background-color: #1F2739;
+	color: rgb(20, 241, 185);
+	font-size: 2.2em;
+	text-transform: uppercase;	
+}
+
+.search-service form input:focus {
+	outline: none;
+}
+
+.search-service form button {
+	height: 76px;
+	width: 76px;
+	margin-left: -4px;
+	font-size: 2.3em;
+	background-color: rgb(20, 241, 185);
+	color: #1F2739;
+	border: none;
+}
+
+.search-service form button:focus{
+	outline: none;
+}
+
+.symbolName {
+	margin-top: 120px;
+	text-align: center;
+	font-size: 5em;
+	color: rgb(20, 241, 185);
+}
+
+.symbolName span {
+	font-size: 0.5em;
+	color: #FB667A;
+}
+
+#companyName {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 3em;
+	color: rgb(20, 241, 185);
+}
+
+.search-service .container {
+	margin-top: 70px;
+	padding-bottom: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1060px;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 2em;
+}
+
+.search-service .stKey , .search-service .stValue, .search-service li {
+	display: inline-block;
+}
+
+.search-service li {
+	margin-bottom: 3px;
+}
+
+.search-service .stKey {
+	width: 360px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #323C50;
+	margin-left: -2px;
+	color: #FB667A;
+}
+
+.search-service .stValue {
+	width: 160px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #2C3446;
+	margin-left: -5px;
+	color: rgb(20, 241, 185);
+}
+
+@media(max-width: 480px){
+	.dashboard header h3 {
+		font-size: 2.5em;
+		letter-spacing: 0.2em;
+	}
+	.dashboard header h1 {
+		font-size: 3.6em;
+	}
+	.dashboard header h2 {
+		width: 260px;
+		font-size: 1.9em;
+	}
+	.search-service header h1 {
+		font-size: 3.6em;
+	}
+	.search-service header h2 {
+		font-size: 1.9em;
+	}
+	.search-service form input {
+		height: 20px;
+		width: 179px;
+	}
+	.search-service form button {
+		height: 66px;
+		width: 65px;
+		margin-left: -4px;
+	}
+	
+	.search-service .container {
+		font-size: 1.6em;
+	}
+	
+	.search-service .stKey {
+		width: 260px;
+	}
+	.search-service .stValue {
+		width: 100px;
+	}
+}
