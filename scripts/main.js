@@ -1,7 +1,8 @@
 $(document).ready(()=>{
 	const demoIcons = ["fa-facebook","fa-apple","fa-windows","fa-google","fa-twitter","fa-yahoo","fa-btc","fa-yelp"];
 	const urlDemo = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22FB%20AAPL%20MSFT%20GOOG%20TWTR%20YHOO%20GBTC%20YELP%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
- 	$.getJSON(urlDemo,(item) => {
+ 	
+	$.getJSON(urlDemo,(item) => {
 		const results = item.query.results.quote;
 		results.map((symbObj, i) => {
 			let str = symbObj.Name.toLowerCase();
@@ -18,7 +19,9 @@ $(document).ready(()=>{
 	$('form').submit(() => (false));
 	$("#btn-search").click(() => {
 		const symbolName = $('#search-field').val();
+		
 		const url = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22' + symbolName + '%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
+		
 		$.getJSON(url,(item) => {
 			const symbObj = item.query.results.quote;
 			for(let prop in symbObj){
@@ -28,84 +31,8 @@ $(document).ready(()=>{
 			}			
 			$('#mainSymbol').html(symbObj.Symbol.toUpperCase());
 			$('#companyName').html(symbObj.Name);
-			
-			$('#Ask').html(symbObj.Ask);
 			$('#AverageDailyVolume').html(symbObj.AverageDailyVolume);
-			$('#Bid').html(symbObj.Bid);
-			$('#AskRealtime').html(symbObj.AskRealtime);
-			$('#BidRealtime').html(symbObj.BidRealtime);
-			$('#BookValue').html(symbObj.BookValue);
-			$('#Change_PercentChange').html(symbObj.Change_PercentChange);
-			$('#Change').html(symbObj.Change);
-			$('#Commission').html(symbObj.Commission);
-			$('#Currency').html(symbObj.Currency);
-			$('#ChangeRealtime').html(symbObj.ChangeRealtime);
-			$('#AfterHoursChangeRealtime').html(symbObj.AfterHoursChangeRealtime);
-			$('#DividendShare').html(symbObj.DividendShare);
-			$('#LastTradeDate').html(symbObj.LastTradeDate);
-			$('#TradeDate').html(symbObj.TradeDate);
-			$('#EarningsShare').html(symbObj.EarningsShare);
-			$('#ErrorIndicationreturnedforsymbolchangedinvalid').html(symbObj.ErrorIndicationreturnedforsymbolchangedinvalid);
-			$('#EPSEstimateCurrentYear').html(symbObj.EPSEstimateCurrentYear);
-			$('#EPSEstimateNextYear').html(symbObj.EPSEstimateNextYear);
-			$('#EPSEstimateNextQuarter').html(symbObj.EPSEstimateNextQuarter);
-			$('#DaysLow').html(symbObj.DaysLow);
-			$('#DaysHigh').html(symbObj.DaysHigh);
-			$('#YearLow').html(symbObj.YearLow);
-			$('#YearHigh').html(symbObj.YearHigh);
-			$('#HoldingsGainPercent').html(symbObj.HoldingsGainPercent);
-			$('#AnnualizedGain').html(symbObj.AnnualizedGain);
-			$('#HoldingsGain').html(symbObj.HoldingsGain);
-			$('#HoldingsGainPercentRealtime').html(symbObj.HoldingsGainPercentRealtime);
-			$('#HoldingsGainRealtime').html(symbObj.HoldingsGainRealtime);
-			$('#MoreInfo').html(symbObj.MoreInfo);
-			$('#OrderBookRealtime').html(symbObj.OrderBookRealtime);
-			$('#MarketCapitalization').html(symbObj.MarketCapitalization);
-			$('#MarketCapRealtime').html(symbObj.MarketCapRealtime);
-			$('#EBITDA').html(symbObj.EBITDA);
-			$('#ChangeFromYearLow').html(symbObj.ChangeFromYearLow);
-			$('#PercentChangeFromYearLow').html(symbObj.PercentChangeFromYearLow);
-			$('#LastTradeRealtimeWithTime').html(symbObj.LastTradeRealtimeWithTime);
-			$('#ChangePercentRealtime').html(symbObj.ChangePercentRealtime);
-			$('#ChangeFromYearHigh').html(symbObj.ChangeFromYearHigh);
-			$('#PercebtChangeFromYearHigh').html(symbObj.PercebtChangeFromYearHigh);
-			$('#LastTradePriceOnly').html(symbObj.LastTradePriceOnly);
-			$('#HighLimit').html(symbObj.HighLimit);
-			$('#LowLimit').html(symbObj.LowLimit);
-			$('#DaysRange').html(symbObj.DaysRange);
-			$('#DaysRangeRealtime').html(symbObj.DaysRangeRealtime);
-			$('#FiftydayMovingAverage').html(symbObj.FiftydayMovingAverage);
-			$('#TwoHundreddayMovingAverage').html(symbObj.TwoHundreddayMovingAverage);
-			$('#ChangeFromTwoHundreddayMovingAverage').html(symbObj.ChangeFromTwoHundreddayMovingAverage);
-			$('#PercentChangeFromTwoHundreddayMovingAverage').html(symbObj.PercentChangeFromTwoHundreddayMovingAverage);
-			$('#ChangeFromFiftydayMovingAverage').html(symbObj.ChangeFromFiftydayMovingAverage);
-			$('#PercentChangeFromFiftydayMovingAverage').html(symbObj.PercentChangeFromFiftydayMovingAverage);
-			$('#Open').html(symbObj.Open);
-			$('#PreviousClose').html(symbObj.PreviousClose);
-			$('#PricePaid').html(symbObj.PricePaid);
-			$('#ChangeinPercent').html(symbObj.ChangeinPercent);
-			$('#PriceSales').html(symbObj.PriceSales);
-			$('#PriceBook').html(symbObj.PriceBook);
-			$('#ExDividendDate').html(symbObj.ExDividendDate);
-			$('#PERatio').html(symbObj.PERatio);
-			$('#DividendPayDate').html(symbObj.DividendPayDate);
-			$('#PERatioRealtime').html(symbObj.PERatioRealtime);
-			$('#PEGRatio').html(symbObj.PEGRatio);
-			$('#PriceEPSEstimateCurrentYear').html(symbObj.PriceEPSEstimateCurrentYear);
-			$('#PriceEPSEstimateNextYear').html(symbObj.PriceEPSEstimateNextYear);
-			$('#SharesOwned').html(symbObj.SharesOwned);
-			$('#ShortRatio').html(symbObj.ShortRatio);
-			$('#LastTradeTime').html(symbObj.LastTradeTime);
-			$('#TickerTrend').html(symbObj.TickerTrend);
-			$('#OneyrTargetPrice').html(symbObj.OneyrTargetPrice);
 			$('#Volume').html(symbObj.Volume);
-			$('#HoldingsValue').html(symbObj.HoldingsValue);
-			$('#HoldingsValueRealtime').html(symbObj.HoldingsValueRealtime);
-			$('#YearRange').html(symbObj.YearRange);
-			$('#DaysValueChange').html(symbObj.DaysValueChange);
-			$('#DaysValueChangeRealtime').html(symbObj.DaysValueChangeRealtime);
-			$('#StockExchange').html(symbObj.StockExchange);
-			$('#DividendYield').html(symbObj.DividendYield);
 			$('#PercentChange').html(symbObj.PercentChange);
 		});
 	});
